@@ -4,13 +4,12 @@
   "description": "registration and login",
   "main": "app.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node app.js"
   },
   "engines": {
-    "node": "16.13.2"
+    "node": "16.13.2",
+    "npm": "8.1.2",
+    "nodemon": "2.0.15"
   },
   "author": " ",
   "license": "ISC",
