@@ -32,7 +32,8 @@ exports.hospitalData = async (req,res) => {
                 params: { lat, lng, type: 'hospital', radius: '500' },
                 headers: {
                     'x-rapidapi-host': 'nearby-places.p.rapidapi.com',
-                    'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
+                    //'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
+                    'x-rapidapi-key': '08a3cae90amshff35d3de9823cbep158a07jsn5a19304725c7'
                 }
             };
             axios(config)
