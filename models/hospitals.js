@@ -28,7 +28,7 @@ exports.hospitalData = async (req,res) => {
 
                 method: 'GET',
                 url: 'https://nearby-places.p.rapidapi.com/nearby',
-                params: { lat, lng, type: 'hospital', radius: '200' },
+                params: { lat, lng, type: 'hospital', radius: '500' },
                 headers: {
                     'x-rapidapi-host': 'nearby-places.p.rapidapi.com',
                     'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
