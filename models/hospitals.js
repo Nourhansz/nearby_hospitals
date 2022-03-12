@@ -7,7 +7,8 @@ exports.hospitalData = async (req,res) => {
     http.get({ 'host': 'api.ipify.org', 'port': 80, 'path': '/' }, function (resp) {
         resp.on('data', function (ip) {
             //console.log("My public IP address is: " + ip);
-            const my_ip = ip.toString();
+            //const my_ip = ip.toString();
+            const my_ip = req.ip.toString();
             //console.log(my_ip);
             var options = {
                 method: 'GET',
