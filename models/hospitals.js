@@ -12,7 +12,7 @@ exports.hospitalData = async (req,res) => {
             var options = {
                 method: 'GET',
                 url: 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/',
-                params: { ip: "154.176.116.80" },
+                //params: { ip: my_ip },
                 headers: {
                     'x-rapidapi-host': 'ip-geolocation-ipwhois-io.p.rapidapi.com',
                     'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
