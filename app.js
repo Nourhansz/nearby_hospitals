@@ -21,12 +21,12 @@ app.use(express.json());
 app.use(userRouter);
 
 app.get('/', (req, res) => {
-    res.send(ip.address());
+    //res.send(ip.address());
 
     //res.send(requestIp.getClientIp(req));
     // res.redirect('/login');
-    //    const idAddress = req.header('x-forwarded-for') || req.remoteAddress;
-    //     console.log(idAddress);
+        const idAddress = req.header('x-forwarded-for') || req.remoteAddress;
+         res.send(idAddress);
 
     // address = ip.address();
     // res.send(address);
