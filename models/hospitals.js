@@ -100,7 +100,7 @@ exports.hospitalData = async (req, res) => {
     //     resp.on('data', function (ip) {
     //console.log("My public IP address is: " + ip);
     //const my_ip = ip.toString();
-    const my_ip = req.socket.remoteAddress.toString();
+    const my_ip = req.socket.remoteAddress;
     //console.log(req.ip);
     console.log(req.socket.remoteAddress);
     var options = {
