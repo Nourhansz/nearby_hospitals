@@ -160,9 +160,9 @@ exports.hospitalData = async (req, res) => {
         console.error(error);
     });
 
-    });
+    // });
 
-    });
+    // });
 };
 
 // exports.hospitalData = async (req, res) => {
