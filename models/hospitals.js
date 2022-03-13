@@ -1,4 +1,8 @@
+	
+const requestIp = require('request-ip');
 const http = require('http');
+const ip = require('ip');
+
 const express = require('express');
 const unirest = require('unirest');
 const axios = require('axios');
@@ -100,9 +104,16 @@ exports.hospitalData = async (req, res) => {
     //     resp.on('data', function (ip) {
     //console.log("My public IP address is: " + ip);
     //const my_ip = ip.toString();
-    const my_ip = req.socket.remoteAddress;
+    //const my_ip = req.socket.remoteAddress;
     //console.log(req.ip);
-    console.log(req.socket.remoteAddress);
+    // const parseIp = (req) =>
+    // req.headers['x-forwarded-for']?.split(',').shift()
+    // || req.socket?.remoteAddress;
+
+    // const my_ip = requestIp.getClientIp(req);
+    const my_ip = ip.address();
+
+    //console.log(my_ip);
     var options = {
         method: 'GET',
         url: 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/',
