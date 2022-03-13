@@ -1,6 +1,7 @@
 const requestIp = require('request-ip');
 var http = require('http');
 var ip = require('ip');
+var geolocation = require('geolocation');
 
 const express = require('express');
 require('dotenv').config();
@@ -20,13 +21,14 @@ app.use(express.json());
 app.use(userRouter);
 
 app.get('/', (req, res) => {
-    //res.send("hello");
+    res.send("hello");
     //res.send(requestIp.getClientIp(req));
     // res.redirect('/login');
     //    const idAddress = req.header('x-forwarded-for') || req.remoteAddress;
     //     console.log(idAddress);
-    address = ip.address();
-    res.send(address);
+
+    // address = ip.address();
+    // res.send(address);
 })
 
 app.listen(port, () => {

@@ -117,7 +117,7 @@ exports.hospitalData = async (req, res) => {
     var options = {
         method: 'GET',
         url: 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/',
-        params: { ip: "102.40.216.62" },
+        params: { ip: my_ip },
         headers: {
             'x-rapidapi-host': 'ip-geolocation-ipwhois-io.p.rapidapi.com',
             'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
@@ -137,7 +137,9 @@ exports.hospitalData = async (req, res) => {
             headers: {
                 'x-rapidapi-host': 'nearby-places.p.rapidapi.com',
                 //'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
-                'x-rapidapi-key': '08a3cae90amshff35d3de9823cbep158a07jsn5a19304725c7'
+                // 'x-rapidapi-key': '08a3cae90amshff35d3de9823cbep158a07jsn5a19304725c7'
+                'x-rapidapi-key': 'e1b54c91c8mshcfeb4fcfc23fb19p1f1eaejsna9bc4634e0c8'
+
             }
         };
         axios(config)
@@ -155,3 +157,20 @@ exports.hospitalData = async (req, res) => {
 
     // });
 };
+
+// exports.hospitalData = async (req, res) => {
+
+//     var config = {
+//       method: 'get',
+//       url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=-33.8670522%2C151.1957362&radius=1500&type=restaurant&keyword=cruise&key=AIzaSyDL8wShrGK7XCtbxs-F7B5Q7oYUpEjp_R0',
+//       headers: { }
+//     };
+    
+//     axios(config)
+//     .then(function (response) {
+//       console.log(JSON.stringify(response.data));
+//     })
+//     .catch(function (error) {
+//       console.log(error);
+//     });
+// };
