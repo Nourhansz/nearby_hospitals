@@ -21,7 +21,8 @@ app.use(express.json());
 app.use(userRouter);
 
 app.get('/', (req, res) => {
-    res.send("hello");
+    res.send(ip.address());
+
     //res.send(requestIp.getClientIp(req));
     // res.redirect('/login');
     //    const idAddress = req.header('x-forwarded-for') || req.remoteAddress;
