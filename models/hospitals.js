@@ -113,7 +113,7 @@ exports.hospitalData = async (req, res) => {
     // const my_ip = requestIp.getClientIp(req);
     // const my_ip = ip.address();
     const idAddress = req.header('x-forwarded-for') || req.remoteAddress;
-         res.send(idAddress);
+         //res.send(idAddress);
 
     //     http.get({ 'host': 'api.ipify.org', 'port': 80, 'path': '/' }, function (resp) {
     //     resp.on('data', function (ip) {
@@ -121,48 +121,48 @@ exports.hospitalData = async (req, res) => {
     // const my_ip = ip.toString();
 
     // console.log(my_ip);
-    // var options = {
-    //     method: 'GET',
-    //     url: 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/',
-    //     params: { ip: my_ip },
-    //     headers: {
-    //         'x-rapidapi-host': 'ip-geolocation-ipwhois-io.p.rapidapi.com',
-    //         'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
-    //     }
-    // };
-    // axios.request(options).then(function (response) {
-    //     //res.send(response.data);
-    //     console.log(response.data);
-    //     const lat = response.data.latitude;
-    //     const lng = response.data.longitude;
+    var options = {
+        method: 'GET',
+        url: 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/',
+        params: { ip: idAddress },
+        headers: {
+            'x-rapidapi-host': 'ip-geolocation-ipwhois-io.p.rapidapi.com',
+            'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
+        }
+    };
+    axios.request(options).then(function (response) {
+        //res.send(response.data);
+        console.log(response.data);
+        const lat = response.data.latitude;
+        const lng = response.data.longitude;
 
-    //     var config = {
+        var config = {
 
-    //         method: 'GET',
-    //         url: 'https://nearby-places.p.rapidapi.com/nearby',
-    //         params: { lat, lng, type: 'hospital', radius: '500' },
-    //         headers: {
-    //             'x-rapidapi-host': 'nearby-places.p.rapidapi.com',
-    //             //'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
-    //             // 'x-rapidapi-key': '08a3cae90amshff35d3de9823cbep158a07jsn5a19304725c7'
-    //             'x-rapidapi-key': 'e1b54c91c8mshcfeb4fcfc23fb19p1f1eaejsna9bc4634e0c8'
+            method: 'GET',
+            url: 'https://nearby-places.p.rapidapi.com/nearby',
+            params: { lat, lng, type: 'hospital', radius: '500' },
+            headers: {
+                'x-rapidapi-host': 'nearby-places.p.rapidapi.com',
+                //'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
+                // 'x-rapidapi-key': '08a3cae90amshff35d3de9823cbep158a07jsn5a19304725c7'
+                'x-rapidapi-key': 'e1b54c91c8mshcfeb4fcfc23fb19p1f1eaejsna9bc4634e0c8'
 
-    //         }
-    //     };
-    //     axios(config)
-    //         .then(function (response) {
-    //             res.send(response.data);
-    //         })
-    //         .catch(function (error) {
-    //             res.send(error);
-    //         });
-    // }).catch(function (error) {
-    //     console.error(error);
-    // });
+            }
+        };
+        axios(config)
+            .then(function (response) {
+                res.send(response.data);
+            })
+            .catch(function (error) {
+                res.send(error);
+            });
+    }).catch(function (error) {
+        console.error(error);
+    });
 
-    // });
+    });
 
-    // });
+    });
 };
 
 // exports.hospitalData = async (req, res) => {
