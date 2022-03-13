@@ -111,9 +111,14 @@ exports.hospitalData = async (req, res) => {
     // || req.socket?.remoteAddress;
 
     // const my_ip = requestIp.getClientIp(req);
-    const my_ip = ip.address();
+    // const my_ip = ip.address();
 
-    //console.log(my_ip);
+        http.get({ 'host': 'api.ipify.org', 'port': 80, 'path': '/' }, function (resp) {
+        resp.on('data', function (ip) {
+    console.log("My public IP address is: " + ip);
+    const my_ip = ip.toString();
+
+    console.log(my_ip);
     var options = {
         method: 'GET',
         url: 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/',
@@ -153,9 +158,9 @@ exports.hospitalData = async (req, res) => {
         console.error(error);
     });
 
-    // });
+    });
 
-    // });
+    });
 };
 
 // exports.hospitalData = async (req, res) => {
