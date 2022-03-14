@@ -145,7 +145,8 @@ exports.hospitalData = async (req, res) => {
                 'x-rapidapi-host': 'nearby-places.p.rapidapi.com',
                 //'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
                 // 'x-rapidapi-key': '08a3cae90amshff35d3de9823cbep158a07jsn5a19304725c7'
-                'x-rapidapi-key': 'e1b54c91c8mshcfeb4fcfc23fb19p1f1eaejsna9bc4634e0c8'
+                // 'x-rapidapi-key': 'e1b54c91c8mshcfeb4fcfc23fb19p1f1eaejsna9bc4634e0c8'
+                'x-rapidapi-key': '2ac8c932c5msha7eee47d75d6a50p1e08b6jsn578a93eb459c'
 
             }
         };
