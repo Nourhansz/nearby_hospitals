@@ -99,72 +99,72 @@ const axios = require('axios');
 // }
 
 
-exports.hospitalData = async (req, res) => {
-    // http.get({ 'host': 'api.ipify.org', 'port': 80, 'path': '/' }, function (resp) {
-    //     resp.on('data', function (ip) {
-    //console.log("My public IP address is: " + ip);
-    //const my_ip = ip.toString();
-    //const my_ip = req.socket.remoteAddress;
-    //console.log(req.ip);
-    // const parseIp = (req) =>
-    // req.headers['x-forwarded-for']?.split(',').shift()
-    // || req.socket?.remoteAddress;
+// exports.hospitalData = async (req, res) => {
+//     // http.get({ 'host': 'api.ipify.org', 'port': 80, 'path': '/' }, function (resp) {
+//     //     resp.on('data', function (ip) {
+//     //console.log("My public IP address is: " + ip);
+//     //const my_ip = ip.toString();
+//     //const my_ip = req.socket.remoteAddress;
+//     //console.log(req.ip);
+//     // const parseIp = (req) =>
+//     // req.headers['x-forwarded-for']?.split(',').shift()
+//     // || req.socket?.remoteAddress;
 
-    // const my_ip = requestIp.getClientIp(req);
-    // const my_ip = ip.address();
-    const idAddress = req.header('x-forwarded-for') || req.remoteAddress;
-         //res.send(idAddress);
+//     // const my_ip = requestIp.getClientIp(req);
+//     // const my_ip = ip.address();
+//     const idAddress = req.header('x-forwarded-for') || req.remoteAddress;
+//          //res.send(idAddress);
 
-    //     http.get({ 'host': 'api.ipify.org', 'port': 80, 'path': '/' }, function (resp) {
-    //     resp.on('data', function (ip) {
-    // console.log("My public IP address is: " + ip);
-    // const my_ip = ip.toString();
+//     //     http.get({ 'host': 'api.ipify.org', 'port': 80, 'path': '/' }, function (resp) {
+//     //     resp.on('data', function (ip) {
+//     // console.log("My public IP address is: " + ip);
+//     // const my_ip = ip.toString();
 
-    // console.log(my_ip);
-    var options = {
-        method: 'GET',
-        url: 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/',
-        params: { ip: idAddress },
-        headers: {
-            'x-rapidapi-host': 'ip-geolocation-ipwhois-io.p.rapidapi.com',
-            'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
-        }
-    };
-    axios.request(options).then(function (response) {
-        //res.send(response.data);
-        console.log(response.data);
-        const lat = response.data.latitude;
-        const lng = response.data.longitude;
+//     // console.log(my_ip);
+//     var options = {
+//         method: 'GET',
+//         url: 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/',
+//         params: { ip: idAddress },
+//         headers: {
+//             'x-rapidapi-host': 'ip-geolocation-ipwhois-io.p.rapidapi.com',
+//             'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
+//         }
+//     };
+//     axios.request(options).then(function (response) {
+//         //res.send(response.data);
+//         console.log(response.data);
+//         const lat = response.data.latitude;
+//         const lng = response.data.longitude;
 
-        var config = {
+//         var config = {
 
-            method: 'GET',
-            url: 'https://nearby-places.p.rapidapi.com/nearby',
-            params: { lat, lng, type: 'hospital', radius: '500' },
-            headers: {
-                'x-rapidapi-host': 'nearby-places.p.rapidapi.com',
-                //'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
-                // 'x-rapidapi-key': '08a3cae90amshff35d3de9823cbep158a07jsn5a19304725c7'
-                // 'x-rapidapi-key': 'e1b54c91c8mshcfeb4fcfc23fb19p1f1eaejsna9bc4634e0c8'
-                'x-rapidapi-key': '2ac8c932c5msha7eee47d75d6a50p1e08b6jsn578a93eb459c'
+//             method: 'GET',
+//             url: 'https://nearby-places.p.rapidapi.com/nearby',
+//             params: { lat, lng, type: 'hospital', radius: '500' },
+//             headers: {
+//                 'x-rapidapi-host': 'nearby-places.p.rapidapi.com',
+//                 //'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
+//                 // 'x-rapidapi-key': '08a3cae90amshff35d3de9823cbep158a07jsn5a19304725c7'
+//                 // 'x-rapidapi-key': 'e1b54c91c8mshcfeb4fcfc23fb19p1f1eaejsna9bc4634e0c8'
+//                 'x-rapidapi-key': '2ac8c932c5msha7eee47d75d6a50p1e08b6jsn578a93eb459c'
 
-            }
-        };
-        axios(config)
-            .then(function (response) {
-                res.send(response.data);
-            })
-            .catch(function (error) {
-                res.send(error);
-            });
-    }).catch(function (error) {
-        console.error(error);
-    });
+//             }
+//         };
+//         axios(config)
+//             .then(function (response) {
+//                 res.send(response.data);
+//             })
+//             .catch(function (error) {
+//                 res.send(error);
+//             });
+//     }).catch(function (error) {
+//         console.error(error);
+//     });
 
-    // });
+//     // });
 
-    // });
-};
+//     // });
+// };
 
 // exports.hospitalData = async (req, res) => {
 
@@ -182,3 +182,37 @@ exports.hospitalData = async (req, res) => {
 //       console.log(error);
 //     });
 // };
+
+exports.hospitalData = async (req, res) => {
+    const idAddress = req.header('x-forwarded-for') || req.remoteAddress;
+    var options = {
+        method: 'GET',
+        url: 'https://ip-geolocation-ipwhois-io.p.rapidapi.com/json/',
+        params: { ip: idAddress },
+        headers: {
+            'x-rapidapi-host': 'ip-geolocation-ipwhois-io.p.rapidapi.com',
+            'x-rapidapi-key': '5e334ee3fbmsh6bd6a8836bbe529p1084f3jsnac9947c9818b'
+        }
+    };
+    axios.request(options).then(function (response) {
+        console.log(response.data);
+        const lat = response.data.latitude;
+        const lng = response.data.longitude;
+
+        var config = {
+            method: 'get',
+            url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+'%2C'+lng+'&radius=1500&type=hospital&key=AIzaSyDL8wShrGK7XCtbxs-F7B5Q7oYUpEjp_R0',
+            headers: { }
+          };
+          
+          axios(config)
+          .then(function (response) {
+            res.send(JSON.stringify(response.data));
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+    }).catch(function (error) {
+        console.error(error);
+    });
+};
