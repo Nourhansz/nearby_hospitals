@@ -25,11 +25,11 @@ app.get('/', (req, res) => {
 
     //res.send(requestIp.getClientIp(req));
     // res.redirect('/login');
-    // const idAddress = req.header('x-forwarded-for') || req.remoteAddress;
-    // res.send(idAddress);
+    const idAddress = req.header('x-forwarded-for') || req.remoteAddress;
+    res.send(idAddress);
 
-    address = ip.address();
-    res.send(address);
+    // address = ip.address();
+    // res.send(address);
 })
 
 app.listen(port, () => {
