@@ -97,7 +97,7 @@ router.get('/hospitals', hospitalData);
 router.get('/hi', (req,res)=> {
     var config = {
         method: 'get',
-        url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=30.0444196%2C31.2357116&radius=1500&type=hospital&key=AIzaSyDL8wShrGK7XCtbxs-F7B5Q7oYUpEjp_R0',
+        url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=31.2058928%2C29.9248117&rankby=distance&name=hospital&key=AIzaSyDL8wShrGK7XCtbxs-F7B5Q7oYUpEjp_R0',
         // url: 'https://{api.tomtom.com}/search/{2}/nearbySearch/.{json}?key={rvYLSPQGMGoop7y58HJujbKmZAbhV4Ge}&lat={31.0424566}&lon={30.4727503}&radius={1500}',
         headers: { }
       };
