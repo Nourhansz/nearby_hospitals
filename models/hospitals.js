@@ -25,7 +25,7 @@ exports.hospitalData = async (req, res) => {
 
         var config = {
             method: 'get',
-            url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+'%2C'+lng+'&rankby=distance&name=hospital&key=AIzaSyDL8wShrGK7XCtbxs-F7B5Q7oYUpEjp_R0',
+            url: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?location='+lat+'%2C'+lng+'&rankby=distance&name=hospital&key=API_KEY',
             headers: { }
           };
           
